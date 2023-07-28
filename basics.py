@@ -181,3 +181,115 @@
 # for student in students:
 #      print(student['name'])
 #      print(student['age'])
+
+#DESTRUCTURING
+# currencies = 0.8,1.2
+# usd,eur = currencies
+# print(usd)
+
+# friends = [("Rolf",25),("Anne",24),("Charlie",31),("Bob",11)]
+# for name,age in friends:
+#     print(name,age)
+
+# friend_ages = {"Rolf":21,"Anne":23,"Charlie":12,"Bob":22}
+# # for name in friend_ages:
+# #     print(name)   
+# for age in friend_ages.values():
+#     print(age)     
+# for name,age in friend_ages.items():
+#     print(name,age)      
+
+#Break And Continue
+cars = ["ok","ok","ok","faulty","ok","ok"]
+# for status in cars:
+#     print(status)
+#     if(status == "faulty"):
+#         print("Stopping the production line")
+#         break #terminating the loop completely
+# for status in cars:
+#     print(status)
+#     if(status == "faulty"):
+#         print("Found the faulty car , skipping...")
+#         continue #skipping the iteration.
+#============================================
+#else keyword
+# cars = ["ok","ok","ok","faulty","ok","ok"]
+# for status in cars:
+#     if status == "faulty":
+#         print("Stopping the production line!")
+#         break
+#     print(status)
+#     print("Shipping new car to customers!")
+# else:
+#     print("All cars built successfully.No faulty cars")  
+# #else means that if entire loop runs without an error , then else block will
+# # get executed.      
+#=====================================
+#Prime numbers using for loop
+# for n in range(2,10):
+#     for x in range(2,n):
+#         if (n%x)==0:
+#             print(f'{n} equals {x} * {n//x}')
+#             break
+#     else:
+#         print(f'{n} is prime')
+#==============================================
+friends = ['abb','cdd','eff','ghh']
+# print(friends[2:4])  
+# print(friends[1:])      
+# print(friends[:4]) 
+# print(friends[:])#here we get a new list not the same list.
+# print(friends[-3:4])
+# print(friends[-3:])#both have same result
+# print(friends[:-2])
+# print(friends[-2:])
+# print(friends[-4:-2])
+#=================================================
+numbers = [0,1,2,3,4]
+doubled_numbers = []
+# for number in numbers:
+#     doubled_numbers.append(number*2)
+# print(doubled_numbers)
+
+#using list comprehension for above given problem 
+doubled_numbers = [number *2 for number in numbers]
+print(doubled_numbers)
+doubled_numbers = [number *2 for number in range(5)]
+print(doubled_numbers)
+
+friend_ages = [22,31,35,37]
+age_strings = [f'My friend is {age} years old.'for age in friend_ages]
+print(age_strings)
+
+names = ["Rolf","Bob","Anne","John"]
+lower = [name.lower() for name in names]
+print(lower)
+
+friend = input("Enter your friend name: ")
+friends = ["Rolf","Bob","Anne","John"]
+friends_lower = [name.lower() for name in friends]
+if friend.lower() in friends_lower:
+    print(f'{friend.title()} is one of your friends.')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
