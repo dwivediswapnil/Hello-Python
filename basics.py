@@ -414,8 +414,46 @@ def greet():
     print("Hello")
 
 hello = greet #Now hello and greet are the same value
+hello()
 
+# Example-2(avg of seq)
+# def average(seq):
+#     return sum(seq)/len(seq)
+# #Lambda conversion
 
+#creating associations
+# operations = {
+#     "average":lambda seq: sum(seq)/len(seq),
+#     "total":lambda seq: sum(seq),
+#     "top":lambda seq: max(seq)
+# }
+operations = {
+    "average":lambda seq: sum(seq)/len(seq),
+    "total":sum,
+    "top":max
+}
+students = [
+    {"name":"Rolf","grades":(12,23,34,45)},
+    {"name":"Bob","grades":(11,21,31,41)},
+    {"name":"Jen","grades":(12,22,32,42)},
+    {"name":"Rolf","grades":(12,23,34,45)},
+]
+
+for student in students:
+    name = student["name"]
+    grades = student["grades"]
+
+    print(f'Student:{name}')
+    operation = input("Enter avg, total or top: ")
+
+    # if operation=='avg':
+    #     print(avg(grades))
+    # elif operation=='total':
+    #     print(total(grades))
+    # elif operation=='top':
+    #     print(top(grades))  
+    operation_function = operations[operation]
+    print(operation_function(grades))
 
 
 
