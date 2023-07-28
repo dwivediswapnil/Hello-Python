@@ -252,29 +252,168 @@ doubled_numbers = []
 # print(doubled_numbers)
 
 #using list comprehension for above given problem 
-doubled_numbers = [number *2 for number in numbers]
-print(doubled_numbers)
-doubled_numbers = [number *2 for number in range(5)]
-print(doubled_numbers)
+# doubled_numbers = [number *2 for number in numbers]
+# print(doubled_numbers)
+# doubled_numbers = [number *2 for number in range(5)]
+# print(doubled_numbers)
 
-friend_ages = [22,31,35,37]
-age_strings = [f'My friend is {age} years old.'for age in friend_ages]
-print(age_strings)
+# friend_ages = [22,31,35,37]
+# age_strings = [f'My friend is {age} years old.'for age in friend_ages]
+# print(age_strings)
 
-names = ["Rolf","Bob","Anne","John"]
-lower = [name.lower() for name in names]
-print(lower)
+# names = ["Rolf","Bob","Anne","John"]
+# lower = [name.lower() for name in names]
+# print(lower)
 
-friend = input("Enter your friend name: ")
-friends = ["Rolf","Bob","Anne","John"]
-friends_lower = [name.lower() for name in friends]
-if friend.lower() in friends_lower:
-    print(f'{friend.title()} is one of your friends.')
+# friend = input("Enter your friend name: ")
+# friends = ["Rolf","Bob","Anne","John"]
+# friends_lower = [name.lower() for name in friends]
+# if friend.lower() in friends_lower:
+#     print(f'{friend.title()} is one of your friends.')
 
+#==============================================
+#List Comprehension
+# ages =[22,23,24,25,26,27]
+# odds = [age for age in ages if age%2==1]
+# print(odds)
 
+# friends = ["Rolf","Bob","Anne","John"]
+# guests  = ["jose","Bob","Rolf","Charlie","Michael"]
 
+# friends_lower =set([name.lower() for name in friends])
+# guests_lower = set([guest.lower() for guest in guests])
 
+# print(friends_lower.intersection(guests_lower))
 
+# # 2nd Approach
+# present_friends = [
+#     name.title() for name in guests if name.lower() in friends_lower
+# ]
+# print(present_friends)
+#===================================================
+#Set comprehension
+# friends = ["Rolf","Bob","Anne","John"]
+# guests  = ["jose","Bob","Rolf","Charlie","Michael"]
+
+# friends_lower = {n.lower() for n in friends}
+# guests_lower =  {n.lower() for n in guests}
+
+# present_friends = {name.title() for name in friends_lower.intersection(guests_lower)}
+# print(friends_lower.intersection(guests_lower))
+# print(present_friends)
+
+#Dictionary Comprehension
+# friends = ["Rolf","Bob","Anne","John"]
+# time_since_seen = [3,7,5,11]
+# long_timers = {
+#     friends[i]:time_since_seen[i]
+#     for i in range(len(friends))
+#     if(time_since_seen[i]>5)
+# }
+# print(long_timers)
+#=================================================
+#ZIP function
+# friends = ["Rolf","Bob","Anne","John"]
+# time_since_seen = [3,7,5,11]
+
+# # dict([("Rolf",3),("Bob",7),("Jen",15),("Anne",11)])
+# long_timers = dict(zip(friends,time_since_seen))#will combine both and results in list of tuples
+# print(long_timers)
+# #with zip we can combine lists
+#==================================================
+# #ENUMERATE
+# friends = ["Rolf","John","Anna"]
+# # for i in enumerate(friends):
+# #     print(i)
+# # print(list(enumerate(friends)))  
+# # print(list(zip([0,1,2],friends)))  #which is equivalent to enumerate
+# print(dict(enumerate(friends,start=1)))#start=1 will start the numbers from 1.
+#===================================================
+#FUNCTIONS
+# def greet():
+#     name=input("Enter your name: ")
+#     print(f"Hello, {name}")
+# greet()    
+# #variable created inside the function die when they reach end of the function.
+#==============================================
+
+# def calculate_mpg(car_to_calculate):
+  
+#     mpg = car_to_calculate["mileage"]/car_to_calculate['fuel_consumed']
+#     name = f'{car_to_calculate["make"]}{car_to_calculate["model"]}'
+#     print(f'{"name"} does {mpg} miles per gallon)')
+
+# calculate_mpg({
+#     "make":"Ford",
+#     "model":"Fiesta",
+#     "mileage":230,
+#     "fuel_consumed":450
+# })
+# cars = [
+#     {"make":"Ford","model":"Fiesta","mileage":23000,"fuel_consumed":460},
+#     {"make":"Ford","model":"Focus","mileage":17000,"fuel_consumed":350},
+#     {"make":"Mazda","model":"MX-5","mileage":49000,"fuel_consumed":900},
+#     {"make":"Mini","model":"Cooper","mileage":31000,"fuel_consumed":235}
+
+# ]
+# def calculate_mpg(car_to_calculate):
+  
+#     mpg = car_to_calculate["mileage"]/car_to_calculate['fuel_consumed']
+#     return mpg
+# def car_name(car_to_calculate):
+#     name = f'{car_to_calculate["make"]}{car_to_calculate["model"]}'
+#     return name
+# def print_car_info(car):
+#     name = car_name(car)
+#     mpg = calculate_mpg(car)
+#     return (f'{"name"} does {mpg} miles per gallon)')
+
+# for car in cars:
+#    print(print_car_info(car))
+#=============================================
+# Default parameter
+# def add(x,y=6):#default value is defined here
+#     total = x+y
+#     return total
+
+# print(add(12))
+# #we can also define it as 
+# print(add(x=12))
+# print(add(x=12,y=13))
+# print(add(11,y=13))
+#============================================
+#seperator
+# print(1,2,3,4,5,6,sep='-')
+#============================================
+#Lambda functions
+# def divide(x,y):
+#     return x/y
+# #lambda conversion
+# divide:lambda x,y:x/y
+# print(divide(15,3))
+# #=========================================
+# # def average(sequence):
+# #     return sum(sequence)/len(sequence)
+# #Lambda conversion
+# average = lambda sequence:sum(sequence)/len(sequence)
+
+# students = [
+#     {"name":"Rolf","grades":(12,23,34,45)},
+#     {"name":"Bob","grades":(11,21,31,41)},
+#     {"name":"Jen","grades":(12,22,32,42)},
+#     {"name":"Rolf","grades":(12,23,34,45)},
+# ]
+# for student in students:
+#     print(average(student["grades"]))
+
+#Lambda functions are used for getting input and returning outputs and not used 
+# for performing actions such as what the print function does.
+#=============================================
+#First class functions
+def greet():
+    print("Hello")
+
+hello = greet #Now hello and greet are the same value
 
 
 
