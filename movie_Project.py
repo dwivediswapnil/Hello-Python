@@ -50,5 +50,4 @@ def menu():
             print("Unknown command. Please try again.")
 
         selection = input(MENU_PROMPT)
-
 menu()
