@@ -22,7 +22,7 @@ def print_movie(movie):
     print(f'Release year: {movie["year"]}')
 
 def show_movie():
-    for movie in enumerate(movies):
+    for movie in movies:
         print_movie(movie)
 
 
